@@ -1,0 +1,623 @@
+<!doctype html>
+<html ⚡>
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-font" src="https://cdn.ampproject.org/v0/amp-font-0.1.js"></script>
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    <link rel="canonical" href="http://localhost:8000/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+      <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+
+
+    <style amp-custom>
+        @font-face {
+        font-family: 'gt-walsheim';
+        font-style: normal;
+        font-weight: 400;
+        src: url(gt-walsheim-medium-web.woff);
+        }
+
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('fonts/fontawesome-webfont.eot?v=4.0.3');
+            src: url('fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .fa {
+            display: inline-block;
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .fa-facebook-official:before {
+             content: "\f230";
+         }
+
+         .fa-twitter-square:before {
+            content: "\f081";
+         }
+
+        .fa-google-plus-square:before {
+            content: "\f0d4";
+        }
+        
+        .fa-instagram:before {
+            content: "\f16d";
+        }
+
+        body {
+            font-family: 'gt-walsheim';
+            background-color: #fbfbfb;
+            color: #777;
+        }            
+        article#preview {
+            background: #ECEFF1;
+        }
+        /* general styling */
+        
+        article#preview {
+            background-color: #f5f5f5;
+        }
+        
+        amp-carousel {
+            margin: 0;
+        }
+
+        amp-sidebar {
+            width: 80vw;
+            background: #dc4e04;
+            /*padding: 10px;*/
+        }
+        /* header with logo and carousel */
+        
+        .header {
+            position: relative;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            padding-top: 52px;
+        }
+        
+        .header {
+            background-color: #dc4e04;
+        }
+        
+        .header #hamburger {
+            position: absolute;
+            top: 3px;
+            left: 0;
+            font-size: 18px;
+            font-weight: 500;
+            color: white;
+            text-transform: uppercase;
+            padding: 13px;
+        }
+        
+        .header form {
+            padding: 0;
+        }
+        
+        .header input::-webkit-search-decoration,
+        .header input::-webkit-search-cancel-button {
+            display: none;
+        }
+        
+        .header input[type=submit] {
+            position: absolute;
+            top: 10px;
+            right: 8px;
+            background-color: black;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: -webkit-image-set( url('search.png') 1x, url('search.png') 2x);
+            border: 0 none;
+            height: 32px;
+            width: 36px;
+            -webkit-appearance: none;
+            border-radius: 0;
+            -moz-border-top-right-radius: 4px;
+            -moz-border-bottom-right-radius: 4px;
+            -webkit-border-top-right-radius: 4px;
+            -webkit-border-bottom-right-radius: 4px;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+        
+        .header input[type=search] {
+            position: absolute;
+            top: 10px;
+            right: 24px;
+            background: #ededed;
+            padding: 0 8px;
+            width: 35vw;
+            height: 32px;
+            font-family: inherit;
+            font-size: 70%;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-appearance: none;
+            border: solid 0px #ccc;
+            border-radius: 0;
+            -moz-border-top-left-radius: 2px;
+            -moz-border-bottom-left-radius: 2px;
+            -webkit-border-top-left-radius: 2px;
+            -webkit-border-bottom-left-radius: 2px;
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+            -webkit-transition: all .9s;
+            -moz-transition: all .9s;
+            transition: all .9s ease;
+        }
+        
+        .header input[type=search]:focus {
+            box-sizing: border-box;
+            width: 80vw;
+            max-width: 700px;
+            height: 32px;
+            background-color: #fff;
+            border-color: #eb407a;
+            -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+            -moz-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+            box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+            outline: none;
+        }
+        
+        .header input:-moz-placeholder,
+        .header input::-webkit-input-placeholder {
+            color: #999;
+        }
+        
+        .header input:focus+#logo {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s 0.7s, opacity 0.7s ease;
+        }
+        
+        .header input+#logo {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 1.5s ease;
+        }
+        
+        @media (min-width: 600px) {
+            .header input[type=search] {
+                width: 100px;
+            }
+            .header input[type=search]:focus {
+                width: 600px;
+            }
+        }
+
+        
+        #hero-images {
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        /*sidebar nav*/
+        .sidebar_header {
+            padding: 10px 10px 0 10px;
+            margin-bottom: 25px;    
+        }
+
+        .sidebar_header a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .sidebar_nav {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            padding: 10px;
+        }
+        .sidebar_nav a { text-decoration: none; color: white }
+
+        .sidebar_nav_right, .sidebar_nav_left {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .sidebar_nav_right a, .sidebar_nav_left a {
+            padding: 5px 0;
+        }
+
+        .sidebar_nav.sidebar_section {
+            display: flex;
+            padding: 10px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.4);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 10px;
+        }
+
+        .sidebar_nav.sidebar_section div { flex: 1 }
+
+
+        .header #logo, .sidebar_logo {
+            width: 150px;
+            height: 120px;
+            background-image: url('brand.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: top left;
+            position: absolute;
+            top: 0;
+            left: 25px;
+            margin: 10px 12px;
+            text-decoration: none;
+        }
+
+        .sidebar_logo {
+            background-position: top left;
+            left: 0;
+            margin-left: 0;
+            width: 160px;
+        }
+        
+
+        .footer {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+            padding: 0 40px;
+        }
+
+        footer {
+            background: #111111;
+            color: #fff;
+            position: relative;
+            min-height: 20em;
+            height: auto;
+            padding: 20px 10px;
+            color: #bbb;
+            margin-top: 10px;
+        }
+
+        footer .title {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 0;
+            font-weight: 600;
+        }
+
+        .line {
+            padding-top: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        footer a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 14px;
+        }
+
+        .legal {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .legal div {
+            display: flex;
+            width: 50%;
+            padding: 10px 0;
+        }
+
+        .legal p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .legal .social_icon {
+            font-size: 2em;
+            padding: 10px 15px 0 0;
+        }
+
+        .mt-20 {
+            margin-top: 20px;
+        }
+
+        .footer_logo {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+            height: 50px;
+            padding: 15px 0;
+        }
+
+        .hub {
+            display: flex;
+            align-self: stretch;
+            background-image: url('brand.png');
+            flex: 1;
+            background-size: contain;
+            background-position: top left;
+            align-items: stretch;
+            background-repeat: no-repeat;
+        }
+
+        .bank {
+            display: flex;
+            align-self: stretch;
+            background-image: url('gtb.png');
+            flex: 1;
+            background-size: contain;
+            background-position: right;
+            background-repeat: no-repeat;
+        }
+
+        /*container styles;*/
+
+        .container {
+            display: flex;
+            height: 89vh;
+            /*height: 100vh;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;*/
+            /*background: url('brand.png') no-repeat center;*/
+            /*background-position: cover;*/
+        }
+
+        .signup {
+            width: 100%;
+            height: 100%;
+            padding: 90px 30px 50px 30px;
+            background: rgba(40, 57, 101, 0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /*.logo {
+            margin-bottom: 55px;
+        }*/
+
+        .logo img {
+            width: 250px;
+        }
+
+        .signup .tab {
+            font-size: 18px;
+            /*padding-bottom: 5px;*/
+            padding-right: 45px;
+            margin: 0 15px 10px 0;
+            text-transform: uppercase;
+            color: white;
+            align-self: flex-start;
+            display: inline-block;
+            border-bottom: 3px solid rgba(255, 87, 34, 0.9);
+        }
+
+        .signup-form {
+            /*min-height: 345px;
+            position: relative;*/
+            width: 100%;
+        }
+
+        .signup-form .group {
+            margin-bottom: 15px;
+        }
+
+        .signup-form .group .label {
+            color: white;
+            font-size: 14px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            width: 100%;
+            display: block;
+        }
+
+        .signup-form .group .input {
+            border: none;
+            padding: 15px 5px;
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            outline: none;
+            width: 100%;
+            color: white;
+            display: block;
+            box-sizing: border-box;
+        }
+
+        .signup-form .group .button {
+            background: rgba(255, 87, 34, 0.9);
+            text-transform: uppercase;
+            font-weight: 700;
+            border: none;
+            padding: 15px 0;
+            border-radius: 2px;
+            font-size: 14px;
+            outline: none;
+            width: 100%;
+            color: white;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .forgot_password {
+            color: rgba(255, 87, 34, 0.9);
+            align-self: center;
+            margin: 0 auto;
+        }
+
+        .hr {
+            height: 2px;
+            margin: 15px 0 15px 0;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        p { margin: 0}
+        .foot-lnk {
+            text-align: center;
+            color: white;
+        }
+
+        b {
+            color: rgba(255, 87, 34, 0.9);
+        }
+
+        /*end of container styles*/
+    </style>
+</head>
+
+<body>
+     <amp-font
+      layout="nodisplay"
+      font-family="gt-walsheim"
+      timeout="3000"
+      on-error-remove-class="my-font-loading"
+      on-error-add-class="my-font-missing"></amp-font>
+
+    <amp-sidebar id='drawermenu' layout='nodisplay'>
+        <div class="sidebar_header" >
+            <a class="sidebar_logo" href="#"></a>
+        </div>
+        <div class="sidebar_nav">
+            <div class="sidebar_nav_right">
+                <a href="#">Home</a>
+                <a href="#">What's New</a>
+                <a href="#">Groceries</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Luxe</a>
+            </div>
+            <div class="sidebar_nav_left">
+                <a href="#">About</a>
+                <a href="#">Sign Up</a>
+                <a href="#">Sales and Deals</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+
+        <div class="sidebar_nav sidebar_section">
+            <div>Login</div>
+            <div>Sign Up</div>
+        </div>
+    </amp-sidebar>
+
+    <div class="header">
+        <a id="hamburger" on="tap:drawermenu.toggle">
+            <amp-img srcset="hamburger.png 2x" width="24" height="24" alt="navigation"></amp-img>
+        </a>
+        <form method="GET" action="#" target="_top">
+            <input name="search" type="search" placeholder="Search...">
+            <!--<a id="logo" href="/">Market Hub</a>-->
+            <a id="logo" href="#"></a>
+            <input type="submit" value="">
+        </form>
+    </div>
+
+
+    <div class="container">
+        <div class="signup">
+             <!--<div class="logo">
+                <img src="brand.png" alt="">
+            </div>-->
+            <label for="tab-1" class="tab">Login</label>
+
+            <div class="signup-form">
+                <!--<div class="signup-user">-->
+                    <div class="group">
+                        <label for="user" class="label">Username or Email Address</label>
+                        <input id="user" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Password</label>
+                        <input id="pass" type="password" class="input" data-type="password">
+                    </div>
+                    <div class="group">
+                        <input onclick="location.href='home.html'" type="submit" class="button" value="Login">
+                    </div>
+                    <a href="#" class="forgot_password">Forgot Your Password?</a>
+                    <div class="hr"></div>
+                    <div class="foot-lnk">
+                        <p><b><a href="register.html">Click here</a></b> to Sign up on Markethub</p>
+                    </div>
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+
+    <footer>    
+        <div>
+            <div class="title">Help</div>
+        </div>
+        <div class="legal">
+            <div>
+                <a href="">Customer Service</a>
+            </div>
+            <div>
+                <a href="">Register your Business</a>
+            </div>
+            <div>
+                <a href="">Return Policy</a>
+            </div>
+        </div>
+
+        <div>
+            <div class="title mt-20">SMEMarketHub</div>
+        </div>
+        <div class="legal">
+            <div><a href="">Home</a></div>
+            <div><a href="">GTBank</a></div>
+            <div><a href="">Ndani</a></div>
+            <div><a href="">Disclaimer</a></div>
+            <div><a href="">Subscribe</a></div>
+            <div><a href="">Merchant Academy</a></div>
+            <div><a href="">SMEMarketHub Luxe</a></div>
+            <div><a href="">MarketHub Grocery</a></div>
+            <div><a href="">Disclaimer</a></div>
+            <div><a href="">Online Forum</a></div>
+            <div><a href="">MarketHub Groceries</a></div>
+            <div><a href="">The 3K Store</a></div>
+            <div><a href="">Corporate Website</a></div>
+            <div><a href="">SME Accounts</a></div>
+            <div><a href="">635 Blog</a></div>
+        </div>
+
+        <div class="legal">
+            <a class="social_icon" href="https://facebook.com/gtbanksmemarkethub"><i class="fa fa-facebook-official"></i></a>
+            <a class="social_icon" href="https://facebook.com/gtbanksmemarkethub"><i class="fa fa-twitter-square"></i></a>
+            <a class="social_icon" href="https://facebook.com/gtbanksmemarkethub"><i class="fa fa-google-plus-square"></i></a>
+            <a class="social_icon" href="https://facebook.com/gtbanksmemarkethub"><i class="fa fa-instagram"></i></a>
+        </div>
+       
+       <div class="line"></div>
+         <div class="legal">
+            <div><a href="">Conditions of Use</a></div>
+            <div><a href="">Privacy Notice</a></div>
+            <p>© 2014-2017, The SME MarketHub, and Guaranty Trust Bank, Plc.</p>
+        </div>
+
+
+        <div class="footer_logo">
+            <a href="" class="hub"></a>
+            <a href="" class="bank"></a>
+        </div>
+        
+    </footer>
+
+    <amp-font layout="nodisplay" font-family="FontAwesome" timeout="3000" on-error-add-class="font-awesome-missing"></amp-font>
+
+</body>
+
+</html>
