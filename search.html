@@ -1,0 +1,838 @@
+<!doctype html>
+<html ⚡>
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-font" src="https://cdn.ampproject.org/v0/amp-font-0.1.js"></script>
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    <link rel="canonical" href="http://localhost:8000/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+      <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+
+
+    <style amp-custom>
+        @font-face {
+        font-family: 'gt-walsheim';
+        font-style: normal;
+        font-weight: 400;
+        src: url(gt-walsheim-medium-web.woff);
+        }
+
+         @font-face {
+            font-family: 'FontAwesome';
+            src: url('fonts/fontawesome-webfont.eot?v=4.0.3');
+            src: url('fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .fa {
+            display: inline-block;
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .fa-facebook-official:before {
+             content: "\f230";
+         }
+
+         .fa-twitter-square:before {
+            content: "\f081";
+         }
+
+        .fa-google-plus-square:before {
+            content: "\f0d4";
+        }
+        
+        .fa-instagram:before {
+            content: "\f16d";
+        }
+
+        body {
+            font-family: 'gt-walsheim';
+            background-color: #fbfbfb;
+        }            
+        article#preview {
+            background: #ECEFF1;
+        }
+        /* general styling */
+        
+        article#preview {
+            background-color: #f5f5f5;
+        }
+        
+        amp-carousel {
+            margin: 0;
+        }
+
+        amp-sidebar {
+            width: 80vw;
+            background: #dc4e04;
+            /*padding: 10px;*/
+        }
+        /* header with logo and carousel */
+        
+        .header {
+            position: relative;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            padding-top: 52px;
+        }
+        
+        .header {
+            background-color: #dc4e04;
+        }
+        
+        .header #hamburger {
+            position: absolute;
+            top: 3px;
+            left: 0;
+            font-size: 18px;
+            font-weight: 500;
+            color: white;
+            text-transform: uppercase;
+            padding: 13px;
+        }
+        
+        /*.header #logo {
+            position: absolute;
+            top: 0;
+            left: 36px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            margin: 16px;
+            height: 32px;
+            text-decoration: none;
+        }*/
+        /* search form */
+        
+        .header form {
+            padding: 0;
+        }
+        
+        .header input::-webkit-search-decoration,
+        .header input::-webkit-search-cancel-button {
+            display: none;
+        }
+        
+        .header input[type=submit] {
+            position: absolute;
+            top: 10px;
+            right: 8px;
+            background-color: black;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: -webkit-image-set( url('search.png') 1x, url('search.png') 2x);
+            border: 0 none;
+            height: 32px;
+            width: 36px;
+            -webkit-appearance: none;
+            border-radius: 0;
+            -moz-border-top-right-radius: 4px;
+            -moz-border-bottom-right-radius: 4px;
+            -webkit-border-top-right-radius: 4px;
+            -webkit-border-bottom-right-radius: 4px;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+        
+        .header input[type=search] {
+            position: absolute;
+            top: 10px;
+            right: 24px;
+            background: #ededed;
+            padding: 0 8px;
+            width: 35vw;
+            height: 32px;
+            font-family: inherit;
+            font-size: 70%;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-appearance: none;
+            border: solid 0px #ccc;
+            border-radius: 0;
+            -moz-border-top-left-radius: 2px;
+            -moz-border-bottom-left-radius: 2px;
+            -webkit-border-top-left-radius: 2px;
+            -webkit-border-bottom-left-radius: 2px;
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+            -webkit-transition: all .9s;
+            -moz-transition: all .9s;
+            transition: all .9s ease;
+        }
+        
+        .header input[type=search]:focus {
+            box-sizing: border-box;
+            width: 80vw;
+            max-width: 700px;
+            height: 32px;
+            background-color: #fff;
+            border-color: #eb407a;
+            -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+            -moz-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+            box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+            outline: none;
+        }
+        
+        .header input:-moz-placeholder,
+        .header input::-webkit-input-placeholder {
+            color: #999;
+        }
+        
+        .header input:focus+#logo {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s 0.7s, opacity 0.7s ease;
+        }
+        
+        .header input+#logo {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 1.5s ease;
+        }
+        
+        @media (min-width: 600px) {
+            .header input[type=search] {
+                width: 100px;
+            }
+            .header input[type=search]:focus {
+                width: 600px;
+            }
+        }
+
+        .deals { 
+            margin-left: 15px;
+            margin-bottom: -20px;
+        }
+
+        /* items */
+        
+        .items,
+        amp-list.items>div {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .items {
+            padding: 0 5px;
+        }
+        
+        .item {
+            flex-grow: 1;
+            flex-shrink: 1;
+            align-self: stretch;
+        }
+        /* tiles */
+        
+        .tile {
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            position: relative;
+            height: 200px;
+            display: block;
+            margin: 5px;
+            -webkit-tap-highlight-color: #eee;
+            box-shadow: 0 0 1.5px #ddd;
+            /*max-width: 200px;*/
+        }
+        
+        @media (max-width: 500px) {
+            .items .tile {
+                width: 150px;
+                height: 200px;
+            }
+        }
+        
+        .tile:active {
+            background-color: #eee;
+        }
+
+        
+        .tile p {
+            margin: 0;
+            padding: 0 8px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        
+        .tile .name {
+            margin-top: 8px;
+        }
+        
+        .tile .price {
+            margin-bottom: 8px;
+        }
+        
+        .tile .price,
+        .tile .star {
+            color: black;
+        }
+        
+        .product-carousel {
+            margin: 0 10px;
+        }
+        
+        .product-carousel_inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: white;
+            border: 1px solid #ebebeb;
+            width: 120px;
+            height: 155px;
+            -webkit-tap-highlight-color: #eee;
+            max-width: 200px;
+        }
+
+        .product-carousel a {
+            text-decoration: none;
+        }
+
+        
+        .product_img_container {
+            flex: 1;
+        }
+         .product_img {
+            /*width: auto;*/
+            /*height: 0;*/
+            flex: 1;
+            background-size: contain;
+            object-fit: contain;
+        }
+
+    
+        
+        #hero-images {
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        /*sidebar nav*/
+        .sidebar_header {
+            padding: 10px 10px 0 10px;
+            margin-bottom: 25px;    
+        }
+
+        .sidebar_header a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .sidebar_nav {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            padding: 10px;
+        }
+        .sidebar_nav a { text-decoration: none; color: white }
+
+        .sidebar_nav_right, .sidebar_nav_left {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .sidebar_nav_right a, .sidebar_nav_left a {
+            padding: 5px 0;
+        }
+
+        .sidebar_nav.sidebar_section {
+            display: flex;
+            padding: 10px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.4);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 10px;
+        }
+
+        .sidebar_nav.sidebar_section div { flex: 1 }
+
+        .product_section_header {
+            display: flex;
+            margin: 10px 10px;
+            /*padding-bottom: 10px;*/
+        }
+
+        .product_pricing {
+            display: flex;  
+            flex-direction: column;
+            justify-content: space-around;
+            flex: 1;
+            padding: 10px 10px;
+            text-align: center
+        }
+
+        .name {
+            /*display: block;*/
+            /*color: #3B3B3B;*/
+            text-align: center;
+            /*overflow: hidden;*/
+            /*font-size: 12px;*/
+            /*width: 100%;*/
+            /*text-overflow: ellipsis;*/
+            white-space: nowrap;
+            display: inline-block;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            margin-top: 5px;
+            color: #777;
+            font-size: 0.7em;
+        }
+
+        .store {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: #999;
+            font-size: 0.6em;
+            font-weight: 500;
+        }        
+
+        .price {
+            display: block;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #dc4e04;
+            font-weight: 700;
+            font-size: 0.75em;
+        }
+
+        .slash {
+            font-size: 11px;
+            color: red;
+        }
+
+        .title_tag {
+            color: #dc4e04;
+            font-size: 0.9em;
+            width: 100%;
+            display: block;
+            margin: 0 10px;
+        }
+
+        .carousel_inner, .showboat_container {
+            background-color: #fbfbfb;
+            box-shadow: 0 0 1.5px #ddd;
+            border: 5px solid #fff;
+            margin: 5px 10px
+        }
+
+        /*.showboat_container { }*/
+
+        .showboat {
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat
+        }
+
+        .header #logo, .sidebar_logo {
+            width: 150px;
+            height: 120px;
+            background-image: url('brand.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: top left;
+            position: absolute;
+            top: 0;
+            left: 25px;
+            margin: 10px 12px;
+            text-decoration: none;
+        }
+
+        .sidebar_logo {
+            background-position: top left;
+            left: 0;
+            margin-left: 0;
+            width: 160px;
+            /*height: 200px;*/
+        }
+
+        .product_item {
+            display: flex;
+            width: 50%;
+            border: 1px solid black;
+        }
+        
+        .placement_body {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            /*border: 1px solid crimson;*/
+            flex-wrap: wrap;
+            padding: 0 5px;
+        }
+
+        .placement_item {
+            /*border: 1px solid grey;*/
+            width: 45%;
+            margin: 5px 5px 5px 5px;
+            flex: 1;
+            border: 1px solid #f7f7f7;
+            box-shadow: 0 0 1.5px #ddd;
+            text-decoration: none;
+        }
+
+        .tab_section {
+            box-shadow: 0 0 5px #ccc;
+            display: flex;
+            padding: 0 10px;
+            margin-bottom: 10px;
+        }
+
+        .tab_group {
+            /*height: 10px;*/
+            /*border: 4px solid green;*/
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+            justify-content: space-between;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul { list-style-type: none}
+
+        .tabs {
+            display: flex;
+            flex-grow: 1;
+            width: 100%; 
+            font-weight: 400;
+            color: #777;
+            font-size: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .active {
+            border-bottom: 3px solid rgba(255, 112, 67, 0.69);
+            color: #dc4e04;
+            padding-right: 60px;
+        }
+
+        .tabs a {
+            display: flex;
+            align-self: stretch;
+            flex: 1;
+            padding: 5px 0;
+        }
+
+        footer {
+            background: #111111;
+            color: #fff;
+            position: relative;
+            min-height: 20em;
+            height: auto;
+            padding: 20px 10px;
+            color: #bbb;
+            margin-top: 10px;
+        }
+
+        footer .title {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 0;
+            font-weight: 600;
+        }
+
+        .line {
+            padding-top: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        footer a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 14px;
+        }
+
+        .legal {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .legal div {
+            display: flex;
+            width: 50%;
+            padding: 10px 0;
+        }
+
+        .legal p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .legal .social_icon {
+            font-size: 2em;
+            padding: 10px 15px 0 0;
+        }
+
+        .mt-20 {
+            margin-top: 20px;
+        }
+
+        .footer_logo {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+            height: 50px;
+            padding: 15px 0;
+        }
+
+        .hub {
+            display: flex;
+            align-self: stretch;
+            background-image: url('brand.png');
+            flex: 1;
+            background-size: contain;
+            background-position: top left;
+            align-items: stretch;
+            background-repeat: no-repeat;
+        }
+
+        .bank {
+            display: flex;
+            align-self: stretch;
+            background-image: url('gtb.png');
+            flex: 1;
+            background-size: contain;
+            background-position: right;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+     <amp-font
+      layout="nodisplay"
+      font-family="gt-walsheim"
+      timeout="3000"
+      on-error-remove-class="my-font-loading"
+      on-error-add-class="my-font-missing"></amp-font>
+
+    <amp-sidebar id='drawermenu' layout='nodisplay'>
+        <div class="sidebar_header" >
+            <a class="sidebar_logo" href="#"></a>
+        </div>
+        <div class="sidebar_nav">
+            <div class="sidebar_nav_right">
+                <a href="#">Home</a>
+                <a href="#">What's New</a>
+                <a href="#">Groceries</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Luxe</a>
+            </div>
+            <div class="sidebar_nav_left">
+                <a href="#">About</a>
+                <a href="#">Sign Up</a>
+                <a href="#">Sales and Deals</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+
+        <div class="sidebar_nav sidebar_section">
+            <div>Login</div>
+            <div>Sign Up</div>
+        </div>
+    </amp-sidebar>
+
+    <div class="header">
+        <a id="hamburger" on="tap:drawermenu.toggle">
+            <amp-img srcset="hamburger.png 2x" width="24" height="24" alt="navigation"></amp-img>
+        </a>
+        <form method="GET" action="#" target="_top">
+            <input name="search" type="search" placeholder="Search...">
+            <!--<a id="logo" href="/">Market Hub</a>-->
+            <a id="logo" href="#"></a>
+            <input type="submit" value="">
+        </form>
+    </div>
+
+    <div class="tab_section" >
+        <ul class="tab_group">
+            <li class="tabs">
+                <a class="active" href="search.html">
+                    Products
+                </a>
+            </li>
+            <li class="tabs">
+                <a href="search2.html">
+                    Shops
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="placement_body" >
+        <a class="placement_item" href="">
+            <div>
+                <amp-img width="640" height="426" layout="responsive" alt="Apple" src="http://af917c7d01baa823b011-1ad3dc173a2ebd2c9fa543639f84c545.r29.cf3.rackcdn.com/1_124.jpg"></amp-img>
+            </div>
+            <div class="product_pricing">
+                <span class="name">Sanda Ladies Recommended Watch on fleek</span>
+                <span class="store">Fresh Look Apparel</span>
+                <span class="price"> ₦ 1,250.00</span>
+            </div>
+        </a>
+        <a class="placement_item" href="">
+            <div>
+                <amp-img width="640" height="426" layout="responsive" alt="Apple" src="http://7c47aa999ddd09d673a6-ced04d3ff20a34a9567daaa19b8d4fc6.r82.cf3.rackcdn.com/91_10.jpg"></amp-img>
+            </div>
+            <div class="product_pricing">
+                <span class="name">Sanda Ladies Recommended Watch on fleek</span>
+                <span class="store">Fresh Look Apparel</span>
+                <span class="price"> ₦ 1,250.00</span>
+            </div>
+        </a>
+        <a class="placement_item" href="">
+            <div>
+                <amp-img width="640" height="426" layout="responsive" alt="Apple" src="http://7e89d2afd1b75727d073-e39f69193cb41db0f7adb0975f11b137.r87.cf3.rackcdn.com/KALUSINI.jpg"></amp-img>
+            </div>
+            <div class="product_pricing">
+                <span class="name">Sanda Ladies Recommended Watch on fleek</span>
+                <span class="store">Fresh Look Apparel</span>
+                <span class="price"> ₦ 1,250.00</span>
+            </div>
+        </a>
+        <a class="placement_item" href="">
+            <div>
+                <amp-img width="640" height="426" layout="responsive" alt="Apple" src="http://af917c7d01baa823b011-1ad3dc173a2ebd2c9fa543639f84c545.r29.cf3.rackcdn.com/1_124.jpg"></amp-img>
+            </div>
+            <div class="product_pricing">
+                <span class="name">Sanda Ladies Recommended Watch on fleek</span>
+                <span class="store">Fresh Look Apparel</span>
+                <span class="price"> ₦ 1,250.00</span>
+            </div>
+        </a>
+        <a class="placement_item" href="">
+            <div>
+                <amp-img width="640" height="426" layout="responsive" alt="Apple" src="http://b87a8a936a162c205a3d-4d6b70734f4606621922473e35b8a067.r31.cf3.rackcdn.com/Velvet-Bow-Tie---Purple-3210473_3.jpg"></amp-img>
+            </div>
+            <div class="product_pricing">
+                <span class="name">Sanda Ladies Recommended Watch on fleek</span>
+                <span class="store">Fresh Look Apparel</span>
+                <span class="price"> ₦ 1,250.00</span>
+            </div>
+        </a>
+        <a class="placement_item" href="">
+            <div>
+                <amp-img width="640" height="426" layout="responsive" alt="Apple" src="http://57435bd722ca191fbc7d-d531ccddfa068d14638d79f6013056e4.r84.cf3.rackcdn.com/Brown_leather_cover_shoe.jpg"></amp-img>
+            </div>
+            <div class="product_pricing">
+                <span class="name">Sanda Ladies Recommended Watch on fleek</span>
+                <span class="store">Fresh Look Apparel</span>
+                <span class="price"> ₦ 1,250.00</span>
+            </div>
+        </a>
+        <a class="placement_item" href="">
+            <div>
+                <amp-img width="640" height="426" layout="responsive" alt="Apple" src="http://57435bd722ca191fbc7d-d531ccddfa068d14638d79f6013056e4.r84.cf3.rackcdn.com/brown_flower_print_design_sneakers.jpg"></amp-img>
+            </div>
+            <div class="product_pricing">
+                <span class="name">Sanda Ladies Recommended Watch on fleek</span>
+                <span class="store">Fresh Look Apparel</span>
+                <span class="price"> ₦ 1,250.00</span>
+            </div>
+        </a>
+        <a class="placement_item" href="">
+            <div>
+                <amp-img width="640" height="426" layout="responsive" alt="Apple" src="http://3e1eb826cff89d73ca93-0ca7136e1c1d7b815f92efb3e3d54be9.r29.cf3.rackcdn.com/FXT_3583.jpg"></amp-img>
+            </div>
+            <div class="product_pricing">
+                <span class="name">Sanda Ladies Recommended Watch on fleek</span>
+                <span class="store">Fresh Look Apparel</span>
+                <span class="price"> ₦ 1,250.00</span>
+            </div>
+        </a>
+    </div>
+
+    <footer>    
+        <div>
+            <div class="title">Help</div>
+        </div>
+        <div class="legal">
+            <div>
+                <a href="">Customer Service</a>
+            </div>
+            <div>
+                <a href="">Register your Business</a>
+            </div>
+            <div>
+                <a href="">Return Policy</a>
+            </div>
+        </div>
+
+        <div>
+            <div class="title mt-20">SMEMarketHub</div>
+        </div>
+        <div class="legal">
+            <div><a href="">Home</a></div>
+            <div><a href="">GTBank</a></div>
+            <div><a href="">Ndani</a></div>
+            <div><a href="">Disclaimer</a></div>
+            <div><a href="">Subscribe</a></div>
+            <div><a href="">Merchant Academy</a></div>
+            <div><a href="">SMEMarketHub Luxe</a></div>
+            <div><a href="">MarketHub Grocery</a></div>
+            <div><a href="">Disclaimer</a></div>
+            <div><a href="">Online Forum</a></div>
+            <div><a href="">MarketHub Groceries</a></div>
+            <div><a href="">The 3K Store</a></div>
+            <div><a href="">Corporate Website</a></div>
+            <div><a href="">SME Accounts</a></div>
+            <div><a href="">635 Blog</a></div>
+        </div>
+
+         <div>
+            <div class="title mt-20">Social Media</div>
+        </div>
+        <div class="legal">
+            <a class="social_icon" href="https://facebook.com/gtbanksmemarkethub"><i class="fa fa-facebook-official"></i></a>
+            <a class="social_icon" href="https://facebook.com/gtbanksmemarkethub"><i class="fa fa-twitter-square"></i></a>
+            <a class="social_icon" href="https://facebook.com/gtbanksmemarkethub"><i class="fa fa-google-plus-square"></i></a>
+            <a class="social_icon" href="https://facebook.com/gtbanksmemarkethub"><i class="fa fa-instagram"></i></a>
+        </div>
+       
+       <div class="line"></div>
+         <div class="legal">
+            <div><a href="">Conditions of Use</a></div>
+            <div><a href="">Privacy Notice</a></div>
+            <p>© 2014-2017, The SME MarketHub, and Guaranty Trust Bank, Plc.</p>
+        </div>
+
+
+        <div class="footer_logo">
+            <a href="" class="hub"></a>
+            <a href="" class="bank"></a>
+        </div>
+        
+    </footer>
+
+    <amp-font layout="nodisplay" font-family="FontAwesome" timeout="3000" on-error-add-class="font-awesome-missing"></amp-font>
+
+</body>
+
+</html>

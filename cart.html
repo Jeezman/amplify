@@ -1,0 +1,790 @@
+<!doctype html>
+<html ⚡>
+
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-font" src="https://cdn.ampproject.org/v0/amp-font-0.1.js"></script>
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    <link rel="canonical" href="http://localhost:8000/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+    <style amp-custom>
+        @font-face {
+            font-family: 'gt-walsheim';
+            font-style: normal;
+            font-weight: 400;
+            src: url(gt-walsheim-medium-web.woff);
+        }
+
+         @font-face {
+            font-family: 'FontAwesome';
+            src: url('fonts/fontawesome-webfont.eot?v=4.0.3');
+            src: url('fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .fa {
+            display: inline-block;
+            font-family: FontAwesome;
+            font-style: normal;
+            /*font-size: 2em;*/
+            font-weight: normal;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        
+         .fa-facebook-official:before {
+             content: "\f230";
+         }
+
+         .fa-twitter-square:before {
+            content: "\f081";
+         }
+
+        .fa-google-plus-square:before {
+            content: "\f0d4";
+        }
+        
+        .fa-instagram:before {
+            content: "\f16d";
+        }
+        
+        body {
+            font-family: 'gt-walsheim';
+            background-color: #fbfbfb;
+        }
+        
+        article#preview {
+            background: #ECEFF1;
+        }
+        /* general styling */
+        
+        article#preview {
+            background-color: #f5f5f5;
+        }
+        
+        amp-sidebar {
+            width: 80vw;
+            background: #dc4e04;
+            /*padding: 10px;*/
+        }
+
+        /* header with logo and carousel */
+        
+        .header {
+            position: relative;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            padding-top: 52px;
+        }
+        
+        .header {
+            background-color: #dc4e04;
+        }
+        
+        .header #hamburger {
+            position: absolute;
+            top: 3px;
+            left: 0;
+            font-size: 18px;
+            font-weight: 500;
+            color: white;
+            text-transform: uppercase;
+            padding: 13px;
+        }
+        
+        .header form {
+            padding: 0;
+        }
+        
+        .header input::-webkit-search-decoration,
+        .header input::-webkit-search-cancel-button {
+            display: none;
+        }
+        
+        .header input[type=submit] {
+            position: absolute;
+            top: 10px;
+            right: 8px;
+            background-color: black;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: -webkit-image-set( url('search.png') 1x, url('search.png') 2x);
+            border: 0 none;
+            height: 32px;
+            width: 36px;
+            -webkit-appearance: none;
+            border-radius: 0;
+            -moz-border-top-right-radius: 4px;
+            -moz-border-bottom-right-radius: 4px;
+            -webkit-border-top-right-radius: 4px;
+            -webkit-border-bottom-right-radius: 4px;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+        
+        .header input[type=search] {
+            position: absolute;
+            top: 10px;
+            right: 24px;
+            background: #ededed;
+            padding: 0 8px;
+            width: 35vw;
+            height: 32px;
+            font-family: inherit;
+            font-size: 70%;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-appearance: none;
+            border: solid 0px #ccc;
+            border-radius: 0;
+            -moz-border-top-left-radius: 2px;
+            -moz-border-bottom-left-radius: 2px;
+            -webkit-border-top-left-radius: 2px;
+            -webkit-border-bottom-left-radius: 2px;
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+            -webkit-transition: all .9s;
+            -moz-transition: all .9s;
+            transition: all .9s ease;
+        }
+        
+        .header input[type=search]:focus {
+            box-sizing: border-box;
+            width: 80vw;
+            max-width: 700px;
+            height: 32px;
+            background-color: #fff;
+            border-color: #eb407a;
+            -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+            -moz-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+            box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+            outline: none;
+        }
+        
+        .header input:-moz-placeholder,
+        .header input::-webkit-input-placeholder {
+            color: #999;
+        }
+        
+        .header input:focus+#logo {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s 0.7s, opacity 0.7s ease;
+        }
+        
+        .header input+#logo {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 1.5s ease;
+        }
+        
+        @media (min-width: 600px) {
+            .header input[type=search] {
+                width: 100px;
+            }
+            .header input[type=search]:focus {
+                width: 600px;
+            }
+        }
+        
+   
+        @media (max-width: 500px) {
+            .items .tile {
+                width: 150px;
+                height: 200px;
+            }
+        }
+     
+        /*sidebar nav*/
+        
+        .sidebar_header {
+            padding: 10px 10px 0 10px;
+            margin-bottom: 25px;
+        }
+        
+        .sidebar_header a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        .sidebar_nav {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            padding: 10px;
+        }
+        
+        .sidebar_nav a {
+            text-decoration: none;
+            color: white
+        }
+        
+        .sidebar_nav_right,
+        .sidebar_nav_left {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        
+        .sidebar_nav_right a,
+        .sidebar_nav_left a {
+            padding: 5px 0;
+        }
+        
+        .sidebar_nav.sidebar_section {
+            display: flex;
+            padding: 10px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.4);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 10px;
+        }
+        
+        .sidebar_nav.sidebar_section div {
+            flex: 1
+        }
+        
+        .header #logo,
+        .sidebar_logo {
+            width: 150px;
+            height: 120px;
+            background-image: url('brand.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: top left;
+            position: absolute;
+            top: 0;
+            left: 25px;
+            margin: 10px 12px;
+            text-decoration: none;
+        }
+        
+        .sidebar_logo {
+            background-position: top left;
+            left: 0;
+            margin-left: 0;
+            width: 160px;
+        }
+
+        .placement {
+            height: 100vh;
+            overflow-y: scroll;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 58px;
+        }
+        
+
+        .placement_body {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            min-height: 155px;
+            overflow: hidden;
+            box-shadow: 0 0 1.5px #ddd;
+            margin-bottom: 10px;
+            margin-right: 5px;
+            margin-left: 5px;
+            color: #777;
+        }
+        
+        .placement_item {
+            width: 45%;
+            margin: 5px 5px 5px 5px;
+            flex: 1;
+            border: 1px solid #f7f7f7;
+            box-shadow: 0 0 1.5px #ddd;
+            text-decoration: none;
+        }
+        
+        .seller {
+            text-align: left;
+            padding: 10px 10px;
+            background: #f8f8f8;
+            font-size: 0.85em;
+            box-shadow: 0 0 1.5px #ddd;
+            color: #757575
+        }
+
+        .details {
+            display: flex;
+            /* margin: 10px; */
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background: white;
+        }
+
+        .product_img {
+            width: 20%;
+        }
+
+        .product_img .image {
+            width: 100%;
+        }
+
+        .product_description {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+            padding-left: 5px;
+            padding-right: 5px;
+            width: 80%;
+        }
+
+        .product_name {
+            width: 95%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 0.85em;
+            padding-bottom: 5px;
+        }
+
+        .variant {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 0.8em;
+        }
+
+        .btn_qty {
+            border: none;
+            text-transform: uppercase;
+            width: 40px;
+            border-radius: 2px;
+            padding: 5px 10px;
+            outline: 0;
+            background: #afafaf;
+            color: white;
+            box-shadow: 0 0 5px #ccc;
+        }
+
+        .input_qty {
+            padding: 5px 10px;
+            width: 30px;
+            font-weight: 0.6em;
+        }
+
+        input {
+            width: 25px;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 2px;
+        }
+
+        .price {
+            color: #dc4e04;
+            font-weight: bold;
+            text-align: right;
+            font-size: 0.8em;
+        }
+
+        .make_choice {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 5px;
+        }
+
+        .add-wishlist {
+            border: 1px solid #ddd;
+            background: transparent;
+            font-size: 0.65em;
+            width: 50%;
+            margin-right: 5px;
+            height: 40px;
+            color: green;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 2px;
+        }
+
+        .remove-product {
+            border: 1px solid #ddd;
+            background: transparent;
+            font-size: 0.65em;
+            height: 40px;
+            width: 50%;
+            color: red;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 2px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .btn {
+            width: 150px;
+            padding: 10px;
+            border: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 2px;
+            padding: 15px 20px;
+            outline: 0;
+        }
+        
+        .add_cart {
+            background: rgba(255, 87, 34, 0.9);
+            color: white;
+            box-shadow: 0 0 5px #ccc;
+            width: 50%;
+        }
+        
+        .add_cart:active {
+            background: rgba(255, 87, 34, 0.7);
+        }
+        
+        table,
+        th,
+        td {
+            border: 1px solid #F3F3F3;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 0 5px #ccc;
+        }
+        
+        caption {
+            background: white;
+            text-align: left;
+            padding: 10px 10px;
+            box-shadow: 0 0 1.5px #ddd;
+            font-size: 0.85em;
+            color: #777;
+        }
+        
+        .col1 {
+            width: 50%;
+            padding: 10px;
+            color: #777;
+            font-size: 0.8em;
+        }
+        
+        .col2 {
+            padding: 10px;
+            font-size: 0.8em;
+            color: #999;
+            text-align: right;
+        }
+
+        .checkout {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5px;
+            margin-top: 10px;
+        }
+
+        p.total {
+            text-align: left;
+            font-size: 13px;
+            font-weight: 700;
+            color: #858585;
+        }
+
+        .total_price {
+            color: #dc4e04;
+            font-weight: bold;
+            text-align: right;
+            font-size: 1.5em;
+        }
+
+        footer {
+            background: #111111;
+            color: #fff;
+            position: relative;
+            min-height: 20em;
+            height: auto;
+            padding: 20px 10px;
+            color: #bbb;
+            margin-top: 10px;
+        }
+
+        footer .title {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 0;
+            font-weight: 600;
+        }
+
+        .line {
+            padding-top: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        footer a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 14px;
+        }
+
+        .legal {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .legal div {
+            display: flex;
+            width: 50%;
+            padding: 10px 0;
+        }
+
+        .legal p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .legal .social_icon {
+            font-size: 2em;
+            padding: 10px 15px 0 0;
+        }
+
+        .mt-20 {
+            margin-top: 20px;
+        }
+
+        .footer_logo {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+            height: 50px;
+            padding: 15px 0;
+        }
+
+        .hub {
+            display: flex;
+            align-self: stretch;
+            background-image: url('brand.png');
+            flex: 1;
+            background-size: contain;
+            background-position: top left;
+            align-items: stretch;
+            background-repeat: no-repeat;
+        }
+
+        .bank {
+            display: flex;
+            align-self: stretch;
+            background-image: url('gtb.png');
+            flex: 1;
+            background-size: contain;
+            background-position: right;
+            background-repeat: no-repeat;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <amp-font layout="nodisplay" font-family="gt-walsheim" timeout="3000" on-error-remove-class="my-font-loading" on-error-add-class="my-font-missing"></amp-font>
+
+    <amp-sidebar id='drawermenu' layout='nodisplay'>
+        <div class="sidebar_header">
+            <a class="sidebar_logo" href="#"></a>
+        </div>
+        <div class="sidebar_nav">
+            <div class="sidebar_nav_right">
+                <a href="#">Home</a>
+                <a href="#">What's New</a>
+                <a href="#">Groceries</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Luxe</a>
+            </div>
+            <div class="sidebar_nav_left">
+                <a href="#">About</a>
+                <a href="#">Sign Up</a>
+                <a href="#">Sales and Deals</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+
+        <div class="sidebar_nav sidebar_section">
+            <div>Login</div>
+            <div>Sign Up</div>
+        </div>
+    </amp-sidebar>
+
+    <div class="header">
+        <a id="hamburger" on="tap:drawermenu.toggle">
+            <amp-img srcset="hamburger.png 2x" width="24" height="24" alt="navigation"></amp-img>
+        </a>
+        <form method="GET" action="#" target="_top">
+            <input name="search" type="search" placeholder="Search...">
+            <a id="logo" href="#"></a>
+            <input type="submit" value="">
+        </form>
+    </div>
+
+    <div class="placement_body">
+        <div class="seller">Seller: Fresh Look Apparel</div>
+        <div class="details">
+            <div class="product_img">
+                <amp-img class="image" width="1024" height="960" layout="responsive" alt="Apple" src="http://5623e5ed11894084b34d-e89347652dad2cb07b49f26a59394349.r9.cf3.rackcdn.com/First_Lakeside_Logo.jpg"></amp-img>
+            </div>
+            <div class="product_description">
+                <div class="product_name">New Japanese Anime Dragon Hoodie Jacket with Chinese Art</div>
+                <div class="variant">
+                    <span>
+                        Qty:
+                        <button type="button" class="btn_qty" data-step="-10">-</button>
+                        <input type="number" class="input_qty" value="0">
+                        <button type="button" class="btn_qty" data-step="10">+</button>
+                    </span>
+                    <span>Black, XXL</span>
+                </div>
+                <div class="price">₦94,000.00</div>
+                <div class="make_choice">
+                    <button class="add-wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;Add to wishlist</button>
+                    <button class="remove-product"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="placement_body">
+        <div class="seller">Seller: Fresh Look Apparel</div>
+        <div class="details">
+            <div class="product_img">
+                <amp-img class="image" width="1024" height="960" layout="responsive" alt="Apple" src="http://5623e5ed11894084b34d-e89347652dad2cb07b49f26a59394349.r9.cf3.rackcdn.com/First_Lakeside_Logo.jpg"></amp-img>
+            </div>
+            <div class="product_description">
+                <div class="product_name">New Japanese Anime Dragon Hoodie Jacket with Chinese Art</div>
+                <div class="variant">
+                    <span>
+                        Qty:
+                        <button type="button" class="btn_qty" data-step="-10">-</button>
+                        <input type="number" class="input_qty" value="0">
+                        <button type="button" class="btn_qty" data-step="10">+</button>
+                    </span>
+                    <span>Black, XXL</span>
+                </div>
+                <div class="price">₦94,000.00</div>
+                <div class="make_choice">
+                    <button class="add-wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;Add to wishlist</button>
+                    <button class="remove-product"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="placement_body">
+        <div class="item_description">
+            <table>
+                <caption>Order Summary</caption>
+                <tbody>
+                    <tr>
+                        <td class="col1">Items Ordered (2)</td>
+                        <td class="col2">₦ 80,000.00</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">Shipping</td>
+                        <td class="col2">Free</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">Store Discount</td>
+                        <td class="col2">₦ 1,000.00</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">Subtotal</td>
+                        <td class="col2">₦ 1,000.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="checkout">
+        <p class="total">Total: <br><span class="total_price">₦184,000.00</span></p>
+        <button class="btn add_cart">Checkout</button>
+    </div>
+
+    <footer>    
+        <div>
+            <div class="title">Help</div>
+        </div>
+        <div class="legal">
+            <div>
+                <a href="">Customer Service</a>
+            </div>
+            <div>
+                <a href="">Register your Business</a>
+            </div>
+            <div>
+                <a href="">Return Policy</a>
+            </div>
+        </div>
+
+        <div>
+            <div class="title mt-20">SMEMarketHub</div>
+        </div>
+        <div class="legal">
+            <div><a href="">Home</a></div>
+            <div><a href="">GTBank</a></div>
+            <div><a href="">Ndani</a></div>
+            <div><a href="">Disclaimer</a></div>
+            <div><a href="">Subscribe</a></div>
+            <div><a href="">Merchant Academy</a></div>
+            <div><a href="">SMEMarketHub Luxe</a></div>
+            <div><a href="">MarketHub Grocery</a></div>
+            <div><a href="">Disclaimer</a></div>
+            <div><a href="">Online Forum</a></div>
+            <div><a href="">MarketHub Groceries</a></div>
+            <div><a href="">The 3K Store</a></div>
+            <div><a href="">Corporate Website</a></div>
+            <div><a href="">SME Accounts</a></div>
+            <div><a href="">635 Blog</a></div>
+        </div>
+
+         <div>
+            <div class="title mt-20">Social Media</div>
+        </div>
+        <div class="legal">
+            <a class="social_icon" href="https://facebook.com/gtbanksmemarkethub"><i class="fa fa-facebook-official"></i></a>
+            <a class="social_icon" href="https://facebook.com/gtbanksmemarkethub"><i class="fa fa-twitter-square"></i></a>
+            <a class="social_icon" href="https://facebook.com/gtbanksmemarkethub"><i class="fa fa-google-plus-square"></i></a>
+            <a class="social_icon" href="https://facebook.com/gtbanksmemarkethub"><i class="fa fa-instagram"></i></a>
+        </div>
+       
+       <div class="line"></div>
+         <div class="legal">
+            <div><a href="">Conditions of Use</a></div>
+            <div><a href="">Privacy Notice</a></div>
+            <p>© 2014-2017, The SME MarketHub, and Guaranty Trust Bank, Plc.</p>
+        </div>
+
+
+        <div class="footer_logo">
+            <a href="" class="hub"></a>
+            <a href="" class="bank"></a>
+        </div>
+        
+    </footer>
+
+</body>
+
+</html>
